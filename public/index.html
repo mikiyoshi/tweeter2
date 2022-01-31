@@ -1,11 +1,4 @@
 <!DOCTYPE html>
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link
-  href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap"
-  rel="stylesheet"
-/>
-<link rel="stylesheet" href="/styles/layout.css" type="text/css" />
 <html lang="en">
   <head>
     <!-- Meta Information -->
@@ -17,9 +10,22 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
       type="text/css"
     />
-
+    <!-- Google Fonts  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- font-awesome  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      type="text/css"
+    />
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -30,10 +36,15 @@
 
   <body>
     <!-- Top nav bar (fixed) -->
-    <nav>
-      <span class="font-bungee">tweeter</span>
-      <span class="font-source-sans">tweeter</span>
-    </nav>
+    <div class="header-nav">
+      <nav>
+        <span class="logo"><a href="/">tweeter</a></span>
+        <div class="sub-title">
+          <div class="title"><strong>Write</strong> a new tweet</div>
+          <div class="angle"><i class="fas fa-angle-double-down"></i></div>
+        </div>
+      </nav>
+    </div>
 
     <!-- Page-specific (main) content here -->
     <main class="container"></main>
