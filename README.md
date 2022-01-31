@@ -26,3 +26,5 @@ This repository is the starter code for the project: Students will fork and clon
   - [Font Awesome](https://fontawesome.com/)
 - Color Scheme
   - [Paletton](https://paletton.com/#uid=73P0u0klNtRc9Kdhxz+q+rJt2lt)
+- Image Textures
+  - [Fresh Snow](https://www.transparenttextures.com/)
