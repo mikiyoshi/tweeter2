@@ -4,9 +4,6 @@
   margin-right: 5%;
   flex: 70%;
 }
-.red {
-  color: #ff0000;
-}
 .new-tweet {
   display: flex;
   flex-direction: column;
@@ -59,6 +56,7 @@
   font-size: large;
 }
 .new-tweet .tweetCounter button:hover {
+  background-color: #eebc4c;
   cursor: pointer;
 }
 .new-tweet .tweetCounter #count-update {
@@ -116,4 +114,8 @@
 }
 .messageBox .userCard .userCardFooter .userSocial li {
   margin-left: 0.5em;
+}
+.messageBox .userCard .userCardFooter .userSocial li a:hover,
+.messageBox .userCard .userCardFooter .userSocial li a.active {
+  color: #eebc4c;
 }

@@ -1,6 +1,9 @@
 $(document).ready(function () {
   // --- our code goes here ---
 
+  //
+  // input tweet conuter
+  //
   const $countUpdate = $('#count-update');
   const $tweetText = $('#tweet-text');
 
@@ -28,4 +31,13 @@ $(document).ready(function () {
       .find('#count-update')
       .html(140 - tweetCount);
   });
+  //
+  // social button on / off
+  //
+  let socialBtns = ['flag', 'retweet', 'heart'];
+  for (socialBtn of socialBtns) {
+    $(`.${socialBtn}`).on('click', function (event) {
+      $(this).toggleClass('active');
+    });
+  }
 });

@@ -62,7 +62,7 @@
     <main class="container">
       <div class="itemCenter">
         <section class="new-tweet">
-          <h2>What are you humming about?</h2>
+          <h2>Compose Tweet</h2>
 
           <form id="newTweet" action="/tweets" method="POST">
             <div id="resultPost"></div>
@@ -79,7 +79,42 @@
             </div>
           </form>
         </section>
-        <article class="messageBox"></article>
+        <article class="messageBox">
+          <div class="userCard">
+            <div class="userCardBody">
+              <div class="userCardHeader">
+                <div class="userIcon">
+                  <img style="width: 50px" src="/images/profile-hex.png" />
+                </div>
+                <div class="userName">Mikiyoshi Kokura</div>
+                <div class="userId">@Miki</div>
+              </div>
+              <div class="userCardMain">
+                <div class="userMessage">Hello world!</div>
+              </div>
+              <div class="userCardFooter">
+                <div class="userDate">
+                  <span class="userDays">10</span> days ago
+                </div>
+                <div class="userSocial">
+                  <ul>
+                    <li>
+                      <a class="flag" href="#"><i class="fas fa-flag"></i></a>
+                    </li>
+                    <li>
+                      <a class="retweet" href="#"><i class="fas fa-retweet"></i></a>
+                    </li>
+                    <li>
+                      <a class="heart" href="#"><i class="fas fa-heart"></i></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="item"></div>
       </div>
     </main>
     <footer></footer>
