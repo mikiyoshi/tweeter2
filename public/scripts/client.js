@@ -65,6 +65,7 @@ $(document).ready(function () {
                     tweet.created_at
                   )}</span>
                 </div>
+
                 <div class="userSocial">
                   <ul>
                     <li>
