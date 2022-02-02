@@ -4,35 +4,6 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 $(document).ready(function () {
-  // const $tweet = timeago.format(1639419790688);
-  // console.log('client.js: ', $tweet);
-  // Fake data taken from initial-tweets.json
-  // const data = [
-  //   {
-  //     user: {
-  //       name: 'Newton',
-  //       avatars: 'https://i.imgur.com/73hZDYK.png',
-  //       handle: '@SirIsaac',
-  //     },
-  //     content: {
-  //       text: 'If I have seen further it is by standing on the shoulders of giants',
-  //     },
-  //     created_at: 1461116232227,
-  //   },
-  //   {
-  //     user: {
-  //       name: 'Descartes',
-  //       avatars: 'https://i.imgur.com/nlhLi3I.png',
-  //       handle: '@rd',
-  //     },
-  //     content: {
-  //       text: 'Je pense , donc je suis',
-  //     },
-  //     created_at: 1461113959088,
-  //   },
-  // ];
-  // const newData = [];
-
   const backupArr = [];
   const renderTweets = function (tweets) {
     console.log('TWEETS: ', tweets);
@@ -79,7 +50,7 @@ $(document).ready(function () {
                 <div class="userId">${tweet.user.handle}</div>
               </div>
               <div class="userCardMain">
-                <div class="userMessage">${tweet.content.text}</div>
+                <div class="userMessage">${escape(tweet.content.text)}</div>
               </div>
               <div class="userCardFooter">
                 <div class="userDate">
@@ -90,15 +61,15 @@ $(document).ready(function () {
 
                 <div class="userSocial">
                   <ul>
-                    <li>
-                      <a class="flag" href="#"><i class="fas fa-flag"></i></a>
-                    </li>
-                    <li>
-                      <a class="retweet" href="#"><i class="fas fa-retweet"></i></a>
-                    </li>
-                    <li>
-                      <a class="heart" href="#"><i class="fas fa-heart"></i></a>
-                    </li>
+                  <li>
+                    <a class="flag" href="#"><i class="fas fa-flag"></i></a>
+                  </li>
+                  <li>
+                    <a class="retweet" href="#"><i class="fas fa-retweet"></i></a>
+                  </li>
+                  <li>
+                    <a class="heart" href="#"><i class="fas fa-heart"></i></a>
+                  </li>
                   </ul>
                 </div>
               </div>
@@ -111,9 +82,6 @@ $(document).ready(function () {
 
   // renderTweets(data);
 
-  //
-  // Fetching tweets with Ajax
-  //
   const loadTweets = function () {
     // console.log($button);
     console.log('Button clicked, performing ajax call...');
@@ -165,6 +133,20 @@ $(document).ready(function () {
       loadTweets(str);
     });
   });
+
+  // $.ajax({
+  //   url: url,
+  //   method: 'GET',
+  // })
+  //   .done((result) => {
+  //     console.log(result);
+  //   })
+  //   .fail((error) => {
+  //     console.log(`Error: ${error.message}`);
+  //   })
+  //   .always(() => {
+  //     console.log('request to TV Maze done');
+  //   });
   //
   // social button on / off
   //
