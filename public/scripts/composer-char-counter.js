@@ -1,10 +1,9 @@
 $(document).ready(function () {
   // --- our code goes here ---
+  // console.log('hello');
 
-  //
-  // input tweet conuter
-  //
   const $countUpdate = $('#count-update');
+  // number dispay 140 now
   const $tweetText = $('#tweet-text');
 
   // text area
@@ -19,6 +18,11 @@ $(document).ready(function () {
         .find('#count-update')
         .addClass('red')
         .html(140 - tweetCount);
+      // start by your self = <textarea id="tweet-text">
+      // then <div class="tweetCounter">
+      // then <output id="count-update">
+      // then add class="red" @ <output id="count-update">
+      // then replace inside html which means text
     } else if (tweetCount < 140) {
       const $findCounter = $(this)
         .siblings('.tweetCounter')
@@ -30,5 +34,10 @@ $(document).ready(function () {
       .siblings('.tweetCounter')
       .find('#count-update')
       .html(140 - tweetCount);
+    // start by your self = <textarea id="tweet-text">
+    // then <div class="tweetCounter">
+    // then <output id="count-update">
+    // then replace inside html which means text
+    // console.log('findCounter: ', $findCounter);
   });
 });

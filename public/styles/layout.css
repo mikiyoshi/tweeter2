@@ -28,6 +28,9 @@ body {
 .font-source-sans {
   font-family: 'Source Sans Pro', sans-serif;
 }
+.red {
+  color: #ff0000;
+}
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */

@@ -4,54 +4,76 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 $(document).ready(function () {
-  // Fake data taken from initial-tweets.json
-  const data = [
-    {
-      user: {
-        name: 'Newton',
-        avatars: 'https://i.imgur.com/73hZDYK.png',
-        handle: '@SirIsaac',
-      },
-      content: {
-        text: 'If I have seen further it is by standing on the shoulders of giants',
-      },
-      created_at: 1461116232227,
-    },
-    {
-      user: {
-        name: 'Descartes',
-        avatars: 'https://i.imgur.com/nlhLi3I.png',
-        handle: '@rd',
-      },
-      content: {
-        text: 'Je pense , donc je suis',
-      },
-      created_at: 1461113959088,
-    },
-  ];
   // const $tweet = timeago.format(1639419790688);
   // console.log('client.js: ', $tweet);
+  // Fake data taken from initial-tweets.json
+  // const data = [
+  //   {
+  //     user: {
+  //       name: 'Newton',
+  //       avatars: 'https://i.imgur.com/73hZDYK.png',
+  //       handle: '@SirIsaac',
+  //     },
+  //     content: {
+  //       text: 'If I have seen further it is by standing on the shoulders of giants',
+  //     },
+  //     created_at: 1461116232227,
+  //   },
+  //   {
+  //     user: {
+  //       name: 'Descartes',
+  //       avatars: 'https://i.imgur.com/nlhLi3I.png',
+  //       handle: '@rd',
+  //     },
+  //     content: {
+  //       text: 'Je pense , donc je suis',
+  //     },
+  //     created_at: 1461113959088,
+  //   },
+  // ];
+  // const newData = [];
+
+  const backupArr = [];
   const renderTweets = function (tweets) {
-    // loops through tweets
-    for (let obj of tweets) {
-      let tweet = createTweetElement(obj);
-      $('.new-tweet').append(tweet);
-      console.log('OBJ: ', tweet);
+    console.log('TWEETS: ', tweets);
+    if (backupArr.length === 1) {
+      console.log('backup: ', backupArr[backupArr.length - 1]);
+      for (let obj of tweets) {
+        // console.log('OBJ: ', obj);
+        // console.log('OBJ: ', obj.content.text);
+        let tweet = createTweetElement(obj);
+        // console.log('OBJ: ', tweet);
+        $('.messageBox').append(tweet);
+      }
+    } else {
+      console.log('backup else: ', backupArr[backupArr.length - 1][0]);
+      const latestOne = [backupArr[backupArr.length - 1][0]];
+      for (let obj of latestOne) {
+        let tweet = createTweetElement(obj);
+        $('.messageBox').prepend(tweet);
+      }
     }
+    // console.log('backup2: ', backupArr[0][0].content.text);
+    // console.log('TWEETS: ', tweets);
+    // loops through tweets
     // calls createTweetElement for each tweet
     // takes return value and appends it to the tweets container
   };
 
   const createTweetElement = function (tweet) {
+    // console.log('createTweet: ', tweet.content.text);
+    // const backupArr = [];
+    // if(tweet.content.text === )
+    // return backupArr
+    // console.log('createTweet: ', tweet.user.avatars);
     // console.log('timenumber: ', timeago.format(1461113959088));
     // console.log('time: ', tweet.created_at);
     let $tweet = $(`
-  <article class="messageBox">
           <div class="userCard">
             <div class="userCardBody">
               <div class="userCardHeader">
                 <div class="userIcon">
-                  <img style="width: 50px" src="${tweet.user.avatars}" />
+                  <img src="${tweet.user.avatars}" />
                 </div>
                 <div class="userName">${tweet.user.name}</div>
                 <div class="userId">${tweet.user.handle}</div>
@@ -82,44 +104,67 @@ $(document).ready(function () {
               </div>
             </div>
           </div>
-        </article>
   `); /* Your code for creating the tweet element */
     // ...
     return $tweet;
   };
 
-  renderTweets(data);
+  // renderTweets(data);
 
-  $('#newTweet').submit(function (event) {
-    const str = $('#newTweet').serialize();
-    if ($('#tweet-text').val() === '') {
-      $('#resultPost').text('Not valid!').show().fadeOut(1000);
-      console.log(str);
-      return;
-    }
-    $('#resultPost').text(str).show().fadeOut(1000);
-    console.log(str);
-
-    $.ajax(
-      '/tweets', // url
-      { method: 'POST', data: $(this).serialize() } // data to be submit
-    ).then(function () {
-      console.log('you are successful', str);
-    });
-    event.preventDefault();
-  });
-
+  //
+  // Fetching tweets with Ajax
+  //
   const loadTweets = function () {
-    const $button = $('#update-button');
-    $button.on('click', function () {
-      console.log('Button clicked, performing ajax call...');
-      $.ajax('/tweets', { method: 'GET' }).then(function (jsonData) {
-        console.log('Success: ', jsonData);
-        // $button.replaceWith(morePostsHtml);
-      });
+    // console.log($button);
+    console.log('Button clicked, performing ajax call...');
+    $.ajax('/tweets', { method: 'GET' }).then(function (jsonData) {
+      const newOrder = jsonData.reverse();
+      backupArr.push(newOrder);
+      renderTweets(newOrder);
+      // newData.push(jsonData);
+      // console.log('jsonData', newOrder);
+      // $button.replaceWith(morePostsHtml);
     });
   };
-  loadTweets();
+  // console.log('after Data', newData);
+
+  $('form').submit(function (event) {
+    event.preventDefault();
+    // console.log('test test');
+    const str = $('form').serialize();
+    if ($('#tweet-text').val() === '') {
+      $('label')
+        .siblings('#resultPost')
+        .addClass('alert')
+        .text("You can't TWEET empty message")
+        .show();
+      // $('#resultPost').text("You can't TWEET empty message").show();
+      // console.log(str);
+    } else if ($('#tweet-text').val().length > 140) {
+      $('label')
+        .siblings('#resultPost')
+        .addClass('alert')
+        .text("You can't TWEET over 140 text message")
+        .show();
+    } else if ($('#tweet-text').val().length <= 140) {
+      $('label')
+        .siblings('#resultPost')
+        .addClass('alert')
+        .text('Please click TWEET button')
+        .show();
+      // console.log($('#tweet-text').val().length);
+      $('#tweet-text').val('');
+    }
+    // console.log(str);
+
+    $.post(
+      '/tweets', // url
+      str // data to be submit
+    ).then(function () {
+      console.log('all the load function', str);
+      loadTweets(str);
+    });
+  });
   //
   // social button on / off
   //

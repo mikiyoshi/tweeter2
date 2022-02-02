@@ -28,12 +28,6 @@
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
-
-    <!-- External JS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
-    <!-- App JS -->
-    <script type="text/javascript" src="/scripts/client.js"></script>
     
     <!-- timeago.js  -->
     <script
@@ -42,6 +36,12 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
+
+    <!-- External JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- App JS -->
+    <script type="text/javascript" src="/scripts/client.js"></script>
   </head>
 
   <body>
@@ -68,16 +68,17 @@
 
     <!-- Page-specific (main) content here -->
     <main class="container">
+      <div class="item"></div>
       <div class="itemCenter">
         <section class="new-tweet">
           <h2>Compose Tweet</h2>
 
           <form id="newTweet" action="/tweets" method="POST">
+            <label for="tweet-text">What are you humming about?</label>
             <div id="resultPost"></div>
             <textarea
               name="text"
               id="tweet-text"
-              placeholder="What are you humming about?"
             ></textarea>
             <div class="tweetCounter">
               <button id="update-button" type="submit">Tweet</button>
@@ -88,38 +89,6 @@
           </form>
         </section>
         <article class="messageBox">
-          <div class="userCard">
-            <div class="userCardBody">
-              <div class="userCardHeader">
-                <div class="userIcon">
-                  <img style="width: 50px" src="/images/profile-hex.png" />
-                </div>
-                <div class="userName">Mikiyoshi Kokura</div>
-                <div class="userId">@Miki</div>
-              </div>
-              <div class="userCardMain">
-                <div class="userMessage">Hello world!</div>
-              </div>
-              <div class="userCardFooter">
-                <div class="userDate">
-                  <span class="userDays">10</span> days ago
-                </div>
-                <div class="userSocial">
-                  <ul>
-                    <li>
-                      <a class="flag" href="#"><i class="fas fa-flag"></i></a>
-                    </li>
-                    <li>
-                      <a class="retweet" href="#"><i class="fas fa-retweet"></i></a>
-                    </li>
-                    <li>
-                      <a class="heart" href="#"><i class="fas fa-heart"></i></a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
         </article>
       </div>
       <div class="item"></div>
