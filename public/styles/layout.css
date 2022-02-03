@@ -34,3 +34,17 @@ body {
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+#page_top {
+  position: fixed;
+  bottom: 30px;
+  right: 20px;
+}
+#page_top a {
+  color: #eebc4c;
+  text-align: center;
+  text-decoration: none;
+}
+#page_top a:hover {
+  color: #ffea73;
+  text-decoration: none;
+}
