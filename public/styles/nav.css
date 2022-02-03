@@ -26,6 +26,14 @@
 .header-nav .sub-title {
   margin-left: auto;
 }
+.header-nav .sub-title .title a {
+  color: #ffffff;
+  text-decoration: none;
+}
+.header-nav .sub-title .title a:hover {
+  color: #eebc4c;
+  text-decoration: none;
+}
 .header-nav .angle {
   text-align: center;
   align-items: baseline;
