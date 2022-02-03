@@ -4,6 +4,14 @@ Tweeter is a simple, single-page Twitter clone.
 
 This repository is the starter code for the project: Students will fork and clone this repository, then build upon it to practice their HTML, CSS, JS, jQuery and AJAX front-end skills, and their Node, Express back-end skills.
 
+## Products
+
+- PC
+  ![PC](/images/pc.png)
+
+- Mobile
+  ![Mobile](/images/mobile.png)
+
 ## Getting Started
 
 1. [Create](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template) a new repository using this repository as a template.
@@ -18,6 +26,7 @@ This repository is the starter code for the project: Students will fork and clon
 - Node 5.10.x or above
 - [jQuery](https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js)
 - [timeago.js](https://cdnjs.com/libraries/timeago.js)
+- Ajax
 
 ## Design
 
@@ -30,3 +39,7 @@ This repository is the starter code for the project: Students will fork and clon
   - [Paletton](https://paletton.com/#uid=73P0u0klNtRc9Kdhxz+q+rJt2lt)
 - Image Textures
   - [Fresh Snow](https://www.transparenttextures.com/)
+- CSS / SASS
+  - [SASS](https://sass-lang.com/guide)
+    - install `npm install -g sass`
+    - run SASS `npm run sass-watch`

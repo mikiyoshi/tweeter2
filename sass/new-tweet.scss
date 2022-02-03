@@ -4,16 +4,13 @@
   margin-right: 5%;
   flex: 70%;
 }
-
 .new-tweet {
   display: flex;
   flex-direction: column;
 }
-
 .new-tweet label {
   display: block;
 }
-
 .new-tweet #resultPost.alert {
   display: block;
   color: #721c24;
@@ -24,14 +21,12 @@
   margin-top: 1rem;
   margin-bottom: 1rem;
   font-weight: 400;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
 }
-
 .new-tweet #resultPost.fas::before {
   font-weight: 700;
-  font-family: "Font Awesome 6 Free";
+  font-family: 'Font Awesome 6 Free';
 }
-
 .new-tweet textarea {
   display: block;
   width: 100%;
@@ -45,7 +40,6 @@
   padding: 0.5em;
   line-height: 1.5;
 }
-
 .new-tweet .tweetCounter {
   display: flex;
   flex-direction: row;
@@ -53,24 +47,21 @@
   margin-top: 0.5em;
   align-items: baseline;
 }
-
 .new-tweet .tweetCounter button {
   color: #fff;
   text-transform: uppercase;
   background-color: #4056a1;
   text-align: center;
-  font-family: "Bungee", cursive;
+  font-family: 'Bungee', cursive;
   font-size: large;
 }
-
 .new-tweet .tweetCounter button:hover {
   background-color: #eebc4c;
   cursor: pointer;
 }
-
 .new-tweet .tweetCounter #count-update {
   margin-left: auto;
-  font-family: "Bungee", cursive;
+  font-family: 'Bungee', cursive;
   font-size: large;
 }
 
@@ -80,39 +71,32 @@
   width: 100%;
   margin-top: 2em;
 }
-
 .messageBox .userCard {
   border: 5px solid #888;
   margin-bottom: 2em;
   padding: 1em;
 }
-
 .messageBox .userCard:hover {
   cursor: pointer;
   box-shadow: 5px 5px #888888;
 }
-
 .messageBox .userCard .userCardHeader {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
-
 .messageBox .userCard .userCardHeader .userName {
   margin-left: 0.5em;
 }
-
 .messageBox .userCard .userCardHeader .userId {
   margin-left: auto;
 }
-
 .messageBox .userCard .userCardMain .userMessage {
   line-height: 2;
   border-bottom: 5px solid #888;
   white-space: normal;
   word-break: break-all;
 }
-
 .messageBox .userCard .userCardFooter {
   display: block;
   display: flex;
@@ -120,25 +104,20 @@
   align-items: baseline;
   font-size: large;
 }
-
 .messageBox .userCard .userCardFooter .userSocial {
   margin-left: auto;
 }
-
 .messageBox .userCard .userCardFooter .userSocial ul {
   display: flex;
   flex-direction: row;
   list-style-type: none;
 }
-
 .messageBox .userCard .userCardFooter .userSocial li {
   margin-left: 0.5em;
 }
-
 .messageBox .userCard .userCardFooter .userSocial li a {
   color: #4056a1;
 }
-
 .messageBox .userCard .userCardFooter .userSocial li a:hover,
 .messageBox .userCard .userCardFooter .userSocial li a.active {
   color: #eebc4c;
@@ -148,90 +127,80 @@
 @media only screen and (min-width: 320px) and (max-width: 420px) {
   /* Write smartphone only styles here */
 }
+
 /* Another smartphone breakpoint is maximum width of around 420px */
 @media only screen and (max-width: 420px) {
   /* Write smartphone only styles here */
   body {
     flex-direction: column;
   }
-
   /* Write Tablet only CSS here */
   .container {
     display: flex;
     flex-direction: column;
     flex: 1;
   }
-
   .messageBox .userCard .userCardHeader {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-
   .messageBox .userCard .userCardHeader .userName {
     margin-left: 0;
   }
-
   .messageBox .userCard .userCardHeader .userId {
     margin-left: 0;
     align-items: baseline;
   }
 }
+
 /* Tablet: minimum width of 768px to maximum width of 1024px */
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
   body {
     flex-direction: column;
   }
-
   /* Write Tablet only CSS here */
   .container {
     display: flex;
     flex-direction: column;
     flex: 1;
   }
-
   .messageBox .userCard .userCardHeader {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-
   .messageBox .userCard .userCardHeader .userName {
     margin-left: 0;
   }
-
   .messageBox .userCard .userCardHeader .userId {
     margin-left: 0;
     align-items: baseline;
   }
 }
+
 /* Another tablet breakpoint is maximum width of 1024px */
 @media only screen and (max-width: 1024px) {
   /* Write CSS rules that target Tablets screen sizes downwards - including smartphones */
   body {
     flex-direction: column;
   }
-
   /* Write Tablet only CSS here */
   .container {
     display: flex;
     flex-direction: column;
     flex: 1;
   }
-
   .messageBox .userCard .userCardHeader {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-
   .messageBox .userCard .userCardHeader .userName {
     margin-left: 0;
   }
-
   .messageBox .userCard .userCardHeader .userId {
     margin-left: 0;
     align-items: baseline;
   }
 }
-/*# sourceMappingURL=new-tweet.css.map */

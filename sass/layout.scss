@@ -6,7 +6,6 @@
 html {
   box-sizing: border-box;
 }
-
 *,
 *:before,
 *:after {
@@ -16,19 +15,18 @@ html {
 /*
  * Global layout stuff
  */
+
 body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   display: flex;
   flex-direction: row;
 }
-
 .red {
   color: #ff0000;
 }
-
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
@@ -37,16 +35,12 @@ body {
   bottom: 30px;
   right: 20px;
 }
-
 #page_top a {
   color: #eebc4c;
   text-align: center;
   text-decoration: none;
 }
-
 #page_top a:hover {
   color: #ffea73;
   text-decoration: none;
 }
-
-/*# sourceMappingURL=layout.css.map */

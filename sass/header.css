@@ -1,4 +1,5 @@
 header {
+  /* display: block; */
   background-image: url("./../images/fresh-snow.png");
   background-color: #8d9dd4;
   flex: 30%;
@@ -13,13 +14,17 @@ header .headerInner {
   display: flex;
   flex-direction: column;
   align-items: center;
+  /* align-items: center; */
+  /* justify-content: space-around; */
 }
 
 header .headerInner .thumbnail {
   display: inline-block;
+  /* align-items: flex-start; */
 }
 
 header .headerInner .userName {
+  /* text-align: center; */
   align-items: baseline;
 }
 
@@ -54,3 +59,5 @@ header .headerInner .userName .textDefault {
     margin-left: 0;
   }
 }
+
+/*# sourceMappingURL=header.css.map */
