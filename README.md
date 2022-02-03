@@ -43,5 +43,5 @@ This repository is the starter code for the project: Students will fork and clon
   - [Fresh Snow](https://www.transparenttextures.com/)
 - CSS / SASS
   - [SASS](https://sass-lang.com/guide)
-    - install `npm install -g sass`
-    - run SASS `npm run sass-watch`
+    - Install using the `npm install -g sass` command.
+    - Watch and output using the `npm run sass-watch` command.
