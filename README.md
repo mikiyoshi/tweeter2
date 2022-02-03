@@ -6,11 +6,13 @@ This repository is the starter code for the project: Students will fork and clon
 
 ## Products
 
-- PC
-  ![PC](/images/pc.png)
+### PC screen capture
 
-- Mobile
-  ![Mobile](/images/mobile.png)
+![PC](/images/pc.png)
+
+### Mobile screen capture
+
+![Mobile](/images/mobile.png)
 
 ## Getting Started
 
