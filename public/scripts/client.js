@@ -155,6 +155,7 @@ $(document).ready(function () {
     $(`.${socialBtn}`).on('click', function (event) {
       $(this).toggleClass('active');
       console.log('click');
+      console.log(event);
     });
   }
   //
