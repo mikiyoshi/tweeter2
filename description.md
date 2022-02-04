@@ -60,7 +60,7 @@
 ## Navigation Bar
 
 - When a user clicks the Compose button in the Navigation Bar:
-  - [x] if the Compose Tweet box is currently hidden, then it is shown, and the textarea inside it is auto-focused
+  - [ ] if the Compose Tweet box is currently hidden, then it is shown, and the textarea inside it is auto-focused
   - [x] if the Compose Tweet box is currently showing, then it is hidden
   - [x] in either case, transitions between 'shown' and 'hidden' states should be animated
 
