@@ -14,15 +14,12 @@ $(document).ready(function () {
   };
   const backupArr = [];
   const renderTweets = function (tweets) {
-    console.log('TWEETS: ', tweets);
     if (backupArr.length === 1) {
-      console.log('backup: ', backupArr[backupArr.length - 1]);
       for (let obj of tweets) {
         let tweet = createTweetElement(obj);
         $('.messageBox').append(tweet);
       }
     } else {
-      console.log('backup else: ', backupArr[backupArr.length - 1][0]);
       const latestOne = [backupArr[backupArr.length - 1][0]];
       for (let obj of latestOne) {
         let tweet = createTweetElement(obj);
@@ -78,7 +75,6 @@ $(document).ready(function () {
   // renderTweets(data);
   //
   const loadTweets = function () {
-    console.log('Button clicked, performing ajax call...');
     $.ajax('/tweets', { method: 'GET' }).then(function (jsonData) {
       const newOrder = jsonData.reverse();
       backupArr.push(newOrder);
@@ -116,7 +112,6 @@ $(document).ready(function () {
         '/tweets', // url
         str // data to be submit
       ).then(function () {
-        console.log('all the load function', str);
         loadTweets(str);
       });
       $('#tweet-text').val('');
