@@ -81,6 +81,7 @@ $(document).ready(function () {
       renderTweets(newOrder);
     });
   };
+  loadTweets();
 
   //
   // submit function and error message
