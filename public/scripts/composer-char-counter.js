@@ -17,6 +17,13 @@ $(document).ready(function () {
         .addClass('red')
         .html(140 - tweetCount);
     } else if (tweetCount < 140) {
+      setTimeout(() => {
+        $('form')
+          .children('#resultPost')
+          .addClass('alert fas fa-exclamation-triangle')
+          .text('Please click TWEET button')
+          .show();
+      }, 5000);
       const $findCounter = $(this)
         .siblings('.tweetCounter')
         .find('#count-update')

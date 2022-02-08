@@ -86,6 +86,13 @@ $(document).ready(function () {
   //
   // submit function and error message
   //
+  // setTimeout(() => {
+  //   console.log('time up');
+  // }, 10);
+  // setTimeout(() => {
+  //   console.log('time up 1000');
+  // }, 1000);
+
   $('form').submit(function (event) {
     event.preventDefault();
     const str = $('form').serialize();
@@ -102,13 +109,10 @@ $(document).ready(function () {
         .text("You can't TWEET over 140 text message")
         .show();
     } else if ($('#tweet-text').val().length <= 140) {
-      $('#tweet-text').change(function () {
-        $('form')
-          .children('#resultPost')
-          .addClass('alert fas fa-exclamation-triangle')
-          .text('Please click TWEET button')
-          .show();
-      });
+      $('form')
+        .children('#resultPost')
+        .removeClass('alert fas fa-exclamation-triangle')
+        .text(' ');
       $.post(
         '/tweets', // url
         str // data to be submit
